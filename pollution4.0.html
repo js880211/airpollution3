@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>pollution 3</title>
+        <style>
+            .middle{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -750px;
+                margin-left: -1333px;
+/*
+                opacity: 0;
+                pointer-events: none;
+*/
+            }
+            button{
+                cursor: pointer;
+            }
+            #pjselements{
+                position: absolute;
+                z-index: 2;
+/*                the id of links.js*/
+            }
+            .csstyle{
+                position: absolute;
+                z-index: 1;
+/*                the father of every "p"id*/
+            }
+            #pbackground{
+                z-index: 0;
+            }
+/*            animation*/
+            #pstart{
+                top: 850px;
+                left: 1105px;
+                transition: all 1s ease;
+                opacity: 1;
+            }
+            #pstart.inactive{
+                top: 850px;
+                left: 1505px;
+                opacity: 0;
+            }
+/*            animation*/
+            #plist{
+                top: 1075px;
+                left: 1105px;
+            }
+            #phome{
+                top: 60px;
+                left: 60px;
+            }
+            #pundo{
+                top: 60px;
+                left: 2375px;
+            }
+            #pclose{
+                top: 60px;
+                left: 2495px;
+            }
+            #pmusic{
+                top: 60px;
+                left: 2250px;
+            }
+        </style>
+        <script src="move.js"></script>
+        <script src="links.js"></script>
+    </head>
+    <body>
+        <!--
+        <h1>This is heading</h1>
+        <p>This is paragraph</p>
+        -->
+        <!-- cssstyle is the class of ptype-->
+        <div class="middle">
+            <img src="background.png" alt="This the image of Home" width="2667px" height="1500px" id="pbackground">
+            
+            <button><img src="home.png" alt="This is the image of home" width="310px" height="215px" id="phome" class="csstyle" onclick="move()"></button>  <!--haven't href yet-->
+            
+            <button><a href="pollution4.0.html?a=2"><img src="start.png" alt="This is the image of gamestart" width="500px" height="205px" id="pstart"  class="csstyle" onclick="links()"></a></button>
+            
+            <button><a href="pollution4.0.html?a=3"><img src="list.png" alt="This is the image of list" width="500px" height="205px" id="plist" class="csstyle" onclick="links()"></a></button>
+            
+            <button><a href="pollution4.0.html?a=4"><img src="music.png" alt="This is the image of music" width="105px" height="105px" id="pmusic" class="csstyle" onclick="links()"></a></button>
+                
+            <button><img src="undo.png" alt="This is the image of undo" width="105px" height="105px" id="pundo" class="csstyle"></button>   <!--haven't href yet-->
+                
+            <button><img src="close.png" alt="This is the image of close" width="105px" height="105px" id="pclose" class="csstyle"></button>    <!--haven't href yet-->
+        </div>
+    </body>
+</html>
