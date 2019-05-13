@@ -15,17 +15,17 @@ if (url.indexOf("?a=")!=0){
 //            home page
             break;
         case "2":
-            context = '<img src="gamenoon.png" alt="This the image of Noon" width="2667px" height="1500px" id="pjselements" class = "middle">';
+            context = '<img src="gamenoon.png" alt="This the image of Noon" width="1200px" height="714px" id="pjselements" class = "middle">';
             break;
         case "3":  
-            context = '<img src="voice.jpg" alt="This the image of List" width="2667px" height="1500px" id="pjselements" class = "middle">';
+            context = '<img src="voice.jpg" alt="This the image of List" width="1200px" height="714px" id="pjselements" class = "middle">';
 //            it might be jpg so it looks smaller
             break;
         case "4":
-            context = '<img src="voicebackground.png" alt="This the image of Voice" width="2667px" height="1500px" id="pjselements" class = "middle">';
+            context = '<img src="voicebackground.png" alt="This the image of Voice" width="1200px" height="714px" id="pjselements" class = "middle">';
             break;
         case "5":
-//            share or undo?
+//            share
             break;
         case "6":
 //            close to where?
