@@ -122,6 +122,9 @@
 		var closebtn2=document.getElementById("soundcontrol")
 		closebtn2.style.display="none";
 	}
+	function mute(){
+
+	}
 </script>
 <script >
 	window.onload = setButton;
@@ -140,7 +143,7 @@
 						i++;
 					}
 					var BGM_vol=document.getElementById("player");
-					BGM_vol.volume=tar/11;
+					BGM_vol.volume=(tar+1)/12;
 					break;
 				case "Sbtn":
 					var tar = Number(this.id.substr(4,2));
@@ -168,7 +171,7 @@
 			btn.width = 12;
 			btn.height = 20;
 			btn.style.opacity = 0;
-			if(i <= 5)btn.style.opacity = 1;
+			if(i <= 2)btn.style.opacity = 1;
 			btn.id = 'Bbtn' + String(i); 
 			btn.onclick = changeVolume;
 			
@@ -187,7 +190,7 @@
 			btn.width = 12;
 			btn.height = 20;
 			btn.style.opacity = 0;
-			if(i <= 5)btn.style.opacity = 1;
+			if(i <= 2)btn.style.opacity = 1;
 			btn.id = 'Sbtn' + String(i);
 			btn.onclick = changeVolume;
 			
