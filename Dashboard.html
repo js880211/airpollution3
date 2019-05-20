@@ -29,16 +29,19 @@
 		</title>
 	</head>
 	<body>
-		<img src=".\Dashbroad\P1.png" id="P">
-		<img src=".\Dashbroad\P2.png" class="dash" id="P">
-		<img src=".\Dashbroad\P3.png" class="dash" id="P">
-		<img src=".\Dashbroad\P4.png" class="dash" id="P">
-		<img src=".\Dashbroad\P5.png" class="dash" id="P">
-		<img src=".\Dashbroad\P6.png" class="dash" id="P">
-		<img src=".\Dashbroad\P7.png" class="dash" id="P">
-		<img src=".\Dashbroad\P8.png" class="dash" id="P">
-		<img src=".\Dashbroad\P9.png" class="dash" id="P">
-		<img src=".\Dashbroad\P10.png" class="dash" id="P">
+		<div class="dash" id="P">
+			<img src=".\Dashbroad\P1.png">
+			<img src=".\Dashbroad\P2.png">
+			<img src=".\Dashbroad\P3.png">
+			<img src=".\Dashbroad\P4.png">
+			<img src=".\Dashbroad\P5.png">
+			<img src=".\Dashbroad\P6.png">
+			<img src=".\Dashbroad\P7.png">
+			<img src=".\Dashbroad\P8.png">
+			<img src=".\Dashbroad\P9.png">
+			<img src=".\Dashbroad\P10.png">
+		</div>
+		
 		<img src=".\Dashbroad\R1.png" >
 		<img src=".\Dashbroad\R2.png" class="dash" id="R">
 		<img src=".\Dashbroad\R3.png" class="dash" id="R">
@@ -69,8 +72,37 @@
 		<img src=".\Dashbroad\W8.png" class="dash"id="W">
 		<img src=".\Dashbroad\W9.png" class="dash"id="W">
 		<img src=".\Dashbroad\W10.png" class="dash"id="W">
+		<form>
+			<select id="num"onclick="myFunction()">
+				 <option value="10" onclick="myFunction()">10%</option>
+				  <option value="20" onclick="myFunction()">20%</option>
+				  <option value="30"onclick="myFunction()">30%</option>
+				  <option value="40"onclick="myFunction()">40%</option>
+				  <option value="50"onclick="myFunction()">50%</option>
+				  <option value="60"onclick="myFunction()">60%</option>
+				  <option value="70"onclick="myFunction()">70%</option>
+				  <option value="80"onclick="myFunction()">80%</option>
+				  <option value="90"onclick="myFunction()">90%</option>
+				  <option value="100"onclick="myFunction()">100%</option>
+			</select>
+		</form>
 	</body>
 </html>
 <script type="text/javascript">
+	
+	myFunction(){
+		document.write("20");
+		var sel=document.getElementById('num').value;
+		switch(sel) 
+		case 10:
+			document.getElementById("result").innerHTML = document.getElementById("number").value
+			break;
+		case 20:
+			document.write("20");
+			break;
+		default:
+			document.write("0");
+			break;
+	}
 	
 </script>
