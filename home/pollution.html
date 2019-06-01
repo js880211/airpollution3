@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>pollution 3</title>
+        <style>
+            .middle{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -357px;
+                margin-left: -600px;
+                
+/*              opacity: 0;
+                pointer-events: none;   */
+            }
+            #pjselements{
+                position: absolute;
+                z-index: 2;
+/*                the id of links.js*/
+            }
+            .csstyle{
+                position: absolute;
+                z-index: 1;
+                cursor: pointer;
+/*                the father of every "p"id*/
+            }
+            #pbackground{
+                z-index: 0;
+            }
+            #pstart{
+                top: 405px;
+                left: 475px;
+                transition: all 1s ease;
+                opacity: 1;
+            }
+            #pstart.inactive{
+                /*            animation*/
+                top: 700px;
+                left: 1100px;
+                opacity: 0;
+            }
+/*            animation*/
+            #plist{
+                top: 520px;
+                left: 475px;
+            }
+            #phome{
+                top: 25px;
+                left: 30px;
+            }
+            #pshare{
+                top: 30px;
+                left: 1000px;
+            }
+            #pclose{
+                top: 30px;
+                left: 1060px;
+            }
+            #pmusic{
+                top: 30px;
+                left: 1120px;
+            }
+            .button{
+				position: absolute;
+				z-index: 2;
+			}
+			#bg1{
+				position: absolute;
+			}
+			#sb1{
+				position: absolute;
+				top: 300px;
+				left: 450px;
+			}
+			#sb2{
+				position: absolute;
+				top: 380px;
+				left: 450px;
+			}
+/*
+            #pshop{
+				position: absolute;
+                z-index: 2;
+                top:8px;
+                left: 1030px;
+				z-index: 2;
+            }
+*/
+        </style>
+        
+    </head>
+    <body>
+        <iframe src="silence.mp3" style="display: none;" allow="autoplay" id="BGM"></iframe>
+        <audio id="player" autoplay loop>
+    	<source src="backgroundmusic.mp3" type="audio/mp3">
+        </audio>
+        <!--
+        <h1>This is heading</h1>
+        <p>This is paragraph</p>
+        -->
+        <!-- cssstyle is the class of ptype-->
+        <div class="middle">
+            <img src="background.png" alt="This the image of Home" width="1200px" height="714px" id="pbackground">
+            
+            <img src="home.png" alt="This is the image of home" width="150px" height="100px" id="phome" class="csstyle" onclick="">  <!--haven't href yet-->
+            
+            <img src="start.png" alt="This is the image of gamestart" width="250px" height="100px" id="pstart"  class="csstyle" onclick="">  <!--haven't href yet-->
+            
+            <img src="list.png" alt="This is the image of list" width="250px" height="100px" id="plist" class="csstyle" onclick="">  <!--haven't href yet-->
+            
+            <img src="music.png" alt="This is the image of music" width="50px" height="50px" id="pmusic" class="csstyle" onclick="musicbtn()">
+                
+            <img src="share.png" alt="This is the image of share" width="50px" height="50px" id="pshare" class="csstyle" onclick="">  <!--haven't href yet-->
+            
+            <img src="close.png" alt="This is the image of close" width="50px" height="50px" id="pclose" class="csstyle" onclick="">  <!--haven't href yet-->
+            
+            <!--<button><a href="pollution4.0.html?a=7"><img src="shop.png" alt="This is the image of shop" width="270px" height="270px"id="pshop" class="csstyle" onclick="links()"></a></button>-->
+        </div>
+        <div width = "1200px" height = "714px" class = "middle" style="display: none;" id="soundcontrol">
+					<image src = "sound-GB.png" width = "1200px" height = "714px" id = "bg1">
+					<image src = "sound-01.png" width = "300px" height = "60px" id = "sb1">
+					<img src="close.png" alt="This is the image of close" width="57px" height="57px" id="pclose" class="csstyle" onclick="closemusiccontrol()">
+				<div id = "Bbtn" ></div>
+					<image src = "sound-02.png" width = "300px" height = "60px" id = "sb2">
+				<div id = "Sbtn" ></div>
+        </div>
+    </body>
+</html>
+            
+<script>
+	function musicbtn ()
+	{
+		var a=document.getElementById('soundcontrol');
+		a.style.display="block";
+		a.style.zIndex="4";
+	}
+	function closemusiccontrol(){
+		var closebtn2=document.getElementById("soundcontrol")
+		closebtn2.style.display="none";
+	}
+	function mute(){
+
+	}
+</script>
+<script >
+	window.onload = setButton;
+	var SE_vol;
+	var BGM_vol;
+	function setButton(){
+		function changeVolume(){
+			switch(this.id.substr(0,4)){
+				case "Bbtn":
+					var tar = Number(this.id.substr(4,2));
+					var i = 0;
+					while(i < 12){
+						var btn = document.getElementById('Bbtn' + String(i));
+						if(i <= tar)btn.style.opacity = 1;
+						else btn.style.opacity = 0;
+						i++;
+					}
+					var BGM_vol=document.getElementById("player");
+					BGM_vol.volume=(tar+1)/12;
+					break;
+				case "Sbtn":
+					var tar = Number(this.id.substr(4,2));
+					var i = 0;
+					while(i < 12){
+						var btn = document.getElementById('Sbtn' + String(i));
+						if(i <= tar)btn.style.opacity = 1;
+						else btn.style.opacity = 0;
+						i++;
+					}
+					break;
+			}
+		}
+		SE_vol = 0.2;
+		BGM_vol = 0.2;
+		var i = 0;
+		var d1 = document.getElementById("Bbtn");
+		while(i < 12){
+			var btn = document.createElement("INPUT");
+			btn.type = "image";
+			btn.src = "sound-03.png";
+			btn.className = "button";
+			btn.style.left = String(508 + i*20.9) + "px";
+			btn.style.top = String(317) + "px";
+			btn.width = 10;
+			btn.height = 17;
+			btn.style.opacity = 0;
+			if(i <= 2)
+                btn.style.opacity = 1;
+			btn.id = 'Bbtn' + String(i); 
+			btn.onclick = changeVolume;
+			
+			d1.appendChild(btn);
+			i++;
+		}
+		i = 0;
+		var d2 = document.getElementById("Sbtn");
+		while(i < 12){
+			var btn = document.createElement("INPUT");
+			btn.type = "image";
+			btn.src = "sound-03.png";
+			btn.className = "button";
+			btn.style.left = String(508 + i*20.9) + "px";
+			btn.style.top = String(394) + "px";
+			btn.width = 10;
+			btn.height = 17;
+			btn.style.opacity = 0;
+			if(i <= 2)btn.style.opacity = 1;
+			btn.id = 'Sbtn' + String(i);
+			btn.onclick = changeVolume;
+			
+			d2.appendChild(btn);
+			i++;
+		}
+	}
+</script>
