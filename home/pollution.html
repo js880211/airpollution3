@@ -104,7 +104,7 @@
             
             <img src="home.png" alt="This is the image of home" width="150px" height="100px" id="phome" class="csstyle" onclick="">  <!--haven't href yet-->
             
-            <img src="start.png" alt="This is the image of gamestart" width="250px" height="100px" id="pstart"  class="csstyle" onclick="">  <!--haven't href yet-->
+            <img src="start.png" alt="This is the image of gamestart" width="250px" height="100px" id="pstart"  class="csstyle" onclick="gamepage">  <!--haven't href yet-->
             
             <img src="list.png" alt="This is the image of list" width="250px" height="100px" id="plist" class="csstyle" onclick="">  <!--haven't href yet-->
             
@@ -140,6 +140,10 @@
 	}
 	function mute(){
 
+	}
+	function gamepage(){
+		
+		document.getElementById("content").innerHTML = ../game/gamepage.html;
 	}
 </script>
 <script >
